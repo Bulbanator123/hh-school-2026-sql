@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS applicants
 	last_name VARCHAR(100) NOT NULL,
 	middle_name VARCHAR(100),
 	area_id INTEGER NOT NULL REFERENCES areas (id),
-	birth_day  DATE NOT NULL DEFAULT NOW(),
+	birth_day  DATE,
 	status VARCHAR(100)
 );
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS resumes
 	specialization_id INTEGER NOT NULL REFERENCES specializations (id),
 	salary INTEGER,
 	published_at DATE NOT NULL DEFAULT NOW(),
-	is_visiable BOOLEAN DEFAULT true
+	is_visible BOOLEAN DEFAULT true
 );
 
 DROP TABLE IF EXISTS responses CASCADE;
@@ -102,5 +102,4 @@ CREATE TABLE IF NOT EXISTS resume_skills
     skill_id INTEGER NOT NULL REFERENCES key_skills(id),
     PRIMARY KEY (resume_id, skill_id)
 );
-
 

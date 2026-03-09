@@ -53,8 +53,8 @@ SELECT
     FLOOR(RANDOM()*16 + 1)::int,
     CONCAT('Vacancy ', id),
     'Test vacancy description',
-    (RANDOM()*100000 + 10000)::int,
-    (RANDOM()*500000 + 30000)::int,
+    (RANDOM()*40000 + 10000)::int,
+    (RANDOM()*500000 + 50000)::int,
     'full-time',
     'Office address',
     '5/2',
@@ -120,5 +120,6 @@ SELECT
     FLOOR(RANDOM()*200 + 1)::int
 FROM generate_series(1,400000)
 ON CONFLICT DO NOTHING;
+
 
 
